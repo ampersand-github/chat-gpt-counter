@@ -1,9 +1,6 @@
 import { withinHours } from "./within-hours";
 
-export const countMessagesWithinHours = async (
-  hour: number,
-  index: IDBIndex
-): Promise<number> => {
+export const countMessagesWithinHours = async (hour: number, index: IDBIndex): Promise<number> => {
   const range = IDBKeyRange.lowerBound(withinHours(hour), true);
   let count = 0;
 
